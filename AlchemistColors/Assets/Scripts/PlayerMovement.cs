@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void FixedUpdate()
     {
-        // Проверка нажатия клавиш для всех направлений
+        
         Move();
     }
 
