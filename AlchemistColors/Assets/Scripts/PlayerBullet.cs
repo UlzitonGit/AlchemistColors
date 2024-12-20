@@ -20,7 +20,14 @@ public class PlayerBullet : MonoBehaviour
     {
         if (collision.CompareTag("Obstacle"))
         {
-            Destroy(gameObject);
+            dir = dir * 0;
+            GetComponent<CapsuleCollider2D>().enabled = false;
+            StartCoroutine(Destroy());
         }
+    }
+    IEnumerator Destroy()
+    {
+        yield return new WaitForSeconds(3);
+        Destroy(gameObject);
     }
 }
