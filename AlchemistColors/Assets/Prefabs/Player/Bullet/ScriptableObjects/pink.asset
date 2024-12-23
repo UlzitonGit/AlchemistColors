@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf517d41b01be9f4ebe9f6bbf5c0743e, type: 3}
+  m_Name: pink
+  m_EditorClassIdentifier: 
+  <color>k__BackingField: pink
+  <Circle>k__BackingField: {fileID: 1798854356176110939, guid: 3b0a0f94143f5d64bab7d46ae5380953, type: 3}
+  <Particle>k__BackingField: {fileID: 4335351711191996645, guid: fb4c373b6dfbe58488d8647b270291f4, type: 3}

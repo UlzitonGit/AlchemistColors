@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerShoot : MonoBehaviour
 {
     [SerializeField] float offset;
-    [SerializeField] PlayerBullet[] bullet;
+    [SerializeField] PlayerBullet bullet;
     [SerializeField] ColorMixer colorMixer;
     [SerializeField] Animator animator;
     bool canShoot = true;
@@ -29,14 +29,11 @@ public class PlayerShoot : MonoBehaviour
     private void Shoot()
     {
         StartCoroutine(Reload());
-        animator.SetTrigger("Shoot");
-        for (int i = 0; i < bullet.Length; i++)
-        {
-            if(bullet[i].color == colorMixer.currentColor)
-            {
-                Instantiate(bullet[i].gameObject, transform.position, transform.rotation);
-            }
-        }
+        animator.SetTrigger("Shoot");  
+        GameObject bulletCurrent = Instantiate(bullet.gameObject, transform.position, transform.rotation);
+        bulletCurrent.GetComponent<PlayerBullet>().targetColor = colorMixer.currentColor;
+
+       
     }
     IEnumerator Reload()
     {

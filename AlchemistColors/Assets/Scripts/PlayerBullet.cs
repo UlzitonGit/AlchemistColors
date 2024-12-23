@@ -5,11 +5,24 @@ using UnityEngine;
 public class PlayerBullet : MonoBehaviour
 {
     [SerializeField] Vector3 dir;
-    [SerializeField] public string color;
+    public string targetColor;
+    public string color;
+    [SerializeField] BulletsTypes[] bullets;
+    [SerializeField] Transform spp;
     // Start is called before the first frame update
     void Start()
     {
-        
+        BulletsTypes bullet = null;
+        for (int i = 0; i < bullets.Length; i++)
+        {
+            if(bullets[i].color == targetColor)
+            {
+                bullet = bullets[i];
+            }
+        }
+        color = bullet.color;
+        Instantiate(bullet.Particle, spp);
+        Instantiate(bullet.Circle, spp);
     }
 
     // Update is called once per frame
@@ -19,10 +32,10 @@ public class PlayerBullet : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Obstacle"))
+        if (collision.CompareTag("Obstacle") || collision.CompareTag("Enemy"))
         {
             dir = dir * 0;
-            GetComponent<CapsuleCollider2D>().enabled = false;
+            
             StartCoroutine(Destroy());
         }
     }

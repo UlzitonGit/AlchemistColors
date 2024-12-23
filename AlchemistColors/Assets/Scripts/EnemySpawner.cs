@@ -24,7 +24,7 @@ public class EnemySpawner : MonoBehaviour
             randPoint = Random.Range(0, spawnPoint.Length);
 
             Instantiate(spawnerEnemy[randEnemy], spawnPoint[randPoint].position, Quaternion.identity);
-
+            if (startSpawnerInterval > 1.5f) startSpawnerInterval -= 0.1f;
             spawnerInterval = startSpawnerInterval;
         }
         else 

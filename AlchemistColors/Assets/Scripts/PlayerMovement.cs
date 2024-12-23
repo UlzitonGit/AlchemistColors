@@ -31,8 +31,8 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = move * moveSpeed;
         
         animator.SetBool("Move", move.magnitude > 0);
-        if (move.magnitude > 0) Time.timeScale = 1;
-        if (move.magnitude == 0) Time.timeScale = 0.2f;
+        //if (move.magnitude > 0) Time.timeScale = 1;
+        //if (move.magnitude == 0) Time.timeScale = 0.2f;
     }
     private void FlipX(bool flipped)
     {
