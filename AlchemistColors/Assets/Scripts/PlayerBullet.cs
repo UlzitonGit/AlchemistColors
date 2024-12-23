@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerBullet : MonoBehaviour
 {
     [SerializeField] Vector3 dir;
+    [SerializeField] public string color;
     // Start is called before the first frame update
     void Start()
     {

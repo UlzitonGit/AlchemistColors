@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerShoot : MonoBehaviour
 {
     [SerializeField] float offset;
-    [SerializeField] GameObject bullet;
+    [SerializeField] PlayerBullet[] bullet;
+    [SerializeField] ColorMixer colorMixer;
     [SerializeField] Animator animator;
     bool canShoot = true;
     // Start is called before the first frame update
@@ -29,7 +30,13 @@ public class PlayerShoot : MonoBehaviour
     {
         StartCoroutine(Reload());
         animator.SetTrigger("Shoot");
-        Instantiate(bullet, transform.position, transform.rotation);
+        for (int i = 0; i < bullet.Length; i++)
+        {
+            if(bullet[i].color == colorMixer.currentColor)
+            {
+                Instantiate(bullet[i].gameObject, transform.position, transform.rotation);
+            }
+        }
     }
     IEnumerator Reload()
     {
