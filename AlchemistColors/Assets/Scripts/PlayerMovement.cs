@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isFlipped = false;
     Rigidbody2D rb;
     [SerializeField] Animator animator;
+    [SerializeField] GameObject looseGamePanel;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -42,6 +43,16 @@ public class PlayerMovement : MonoBehaviour
             Vector3 localScale = transform.localScale;
             localScale.x *= -1;
             transform.localScale = localScale;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            // остановка времени
+            Time.timeScale = 0;
+            // отображение панели
+            looseGamePanel.SetActive(true);
         }
     }
 }

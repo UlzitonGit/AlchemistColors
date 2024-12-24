@@ -2653,6 +2653,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7d0274c4260d440488f5759ea1abcf81, type: 2}
   deathPart: {fileID: 8477389505656632184, guid: 185482fb6dadca946bffc44e622ee184, type: 3}
   amuletPos: {fileID: 5300166465153475642}
+  looseGamePanel: {fileID: 1970857152873304225, guid: a6c069ff9cbc80e428f3115101d1c8ce, type: 3}
 --- !u!1 &6579686623278396086
 GameObject:
   m_ObjectHideFlags: 0

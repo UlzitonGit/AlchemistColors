@@ -35,10 +35,6 @@ public class EnemyContoller : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
         if (collision.gameObject.tag == "Bullet" && collision.gameObject.GetComponent<PlayerBullet>().color == color) 
         {
             Instantiate(deathPart, transform.position, Quaternion.Euler(0,0,60));
